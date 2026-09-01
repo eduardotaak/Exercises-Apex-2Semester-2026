@@ -1,0 +1,12 @@
+public String ageGroup(Integer n) {
+    if(n >= 0 && n<= 1){
+        return 'Infant';
+    }
+    else if(n >=2 && n<= 14){
+        return 'Child';
+    }
+    else if(n>=15 && n<=21){
+        return 'Youth';
+    }
+    return 'Adult';
+}
