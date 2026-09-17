@@ -116,8 +116,32 @@
             adicionarReserva(reservaCliente);
             return reservaCliente;
         }
-
         public void cancelarReserva(Reserva reserva){
-            reserva.sRestaurante = StatusReserva.sReserva.CANCELADA;
+    reserva.sRestaurante = StatusReserva.sReserva.CANCELADA;
+
+    Mesa mesaLiberada = reserva.mesa;
+    Integer indiceReservaPromovida = null;
+
+    for(Reserva r : this.listaEspera){
+
+        if(
+            r.sRestaurante == StatusReserva.sReserva.PENDENTE &&
+            r.rRestaurante == reserva.rRestaurante &&
+            r.localPreferencia == mesaLiberada.local &&
+            r.quantidadePessoas <= mesaLiberada.capacidade
+        ){
+            r.sRestaurante = StatusReserva.sReserva.CONFIRMADA;
+            r.mesa = mesaLiberada;
+
+            adicionarReserva(r);
+
+            indiceReservaPromovida = this.listaEspera.indexOf(r);
+            break;
         }
     }
+
+    if(indiceReservaPromovida != null){
+        this.listaEspera.remove(indiceReservaPromovida);
+    }
+}
+}
