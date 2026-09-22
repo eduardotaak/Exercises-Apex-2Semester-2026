@@ -3,6 +3,7 @@ public class LocalMesa {
         SALAO, JARDIM
     }
 
+    //recebe uma string e devolve um e um
     public static LocalCliente validacao(String s){
         if(String.isBlank(s)){
             return null;

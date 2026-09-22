@@ -5,6 +5,7 @@ public class PeriodoReserva {
         NOITE
     }
 
+    // recebe uma string e devolve um enum
     public static pReserva validacao(String s){
         if(String.isBlank(s)){
             return null;

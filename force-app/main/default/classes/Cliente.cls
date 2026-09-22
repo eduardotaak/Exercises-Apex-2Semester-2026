@@ -1,9 +1,12 @@
-public with sharing class Cliente {
+public class Cliente{
     public String nome;
-    public String cpf;
+    public Documento cpf;
 
-    public Cliente(String nome, String cpf) {
-        this.nome = nome;
+    public Cliente(String nome, Documento cpf) {
         this.cpf = cpf;
+        this.nome = nome;
     }
+
 }
+
+// classe cliente que ira instanciar o objeto cliente

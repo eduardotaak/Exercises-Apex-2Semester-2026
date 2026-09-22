@@ -5,6 +5,7 @@ public class StatusReserva {
         CANCELADA
     }
 
+    // recenbe uma string e devolve um enum
     public static sReserva validacao(String s){
         if(String.isBlank(s)){
             return null;
